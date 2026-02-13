@@ -13,4 +13,3 @@ def dateformate(curent_date,last_date):
     except FileExistsError:
         print('This folders is Exists Error:FileExistsError')
 dateformate(curent_date,last_date)
-print(os.path.abspath('date'))
