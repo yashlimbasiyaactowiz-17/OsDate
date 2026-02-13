@@ -1,17 +1,17 @@
 import  os
 from datetime import datetime, timedelta,date
 
-def dateformate(datetime):
+def dateformate(dt):
     try:
-        datetime = datetime.strptime(curent_date, "%Y-%m-%d").date()
-        year = datetime.year
+        dt = datetime.strptime(dt, "%Y-%m-%d").date()
+        year = dt.year
         last_date = date(year, 12, 31)
-        for i in range(1,(last_date-datetime).days+1):
-            folder = datetime + timedelta(days=i)
+        for i in range(1,(last_date-dt).days+1):
+            folder = dt + timedelta(days=i)
             os.mkdir(f"C:/Users/yash.limbasiya/Desktop/date/{folder.strftime('%Y-%m-%d')}")
         print("Your folder's has been created")
     except FileExistsError:
         print('This folders is Exists Error:FileExistsError')
 
 curent_date = input("enter the date 'yyyy-mm-dd': ")
-dateformate(datetime)
+dateformate(curent_date)
