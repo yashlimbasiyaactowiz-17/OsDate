@@ -13,6 +13,6 @@ if not os.path.exists('date'):
 
 for i in range(1,avg):
     folder = curent_date + timedelta(days=i)
-
+    os.mkdir(f"date/{folder.strftime('%Y-%m-%d')}")
 
 
