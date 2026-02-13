@@ -1,14 +1,16 @@
 import  os
 from datetime import datetime, timedelta,date
 
-def dateformate():
-    curent_date = datetime.today()
-    lastdate = date(2026,12,31)
+curent_date = datetime.today()
+last_date = date(2026, 12, 31)
 
-    if not os.path.exists('date'):
-        os.mkdir('date')
-    for i in range(1,(lastdate-curent_date.date()).days):
-        folder = curent_date + timedelta(days=i)
-        os.mkdir(f"date/{folder.strftime('%Y-%m-%d')}")
-
-dateformate()
+def dateformate(curent_date,last_date):
+    try:
+        for i in range(1,(last_date-curent_date.date()).days):
+            folder = curent_date + timedelta(days=i)
+            os.mkdir(f"C:/Users/yash.limbasiya/Desktop/date/{folder.strftime('%Y-%m-%d')}")
+        print("Your folder's has been created")
+    except FileExistsError:
+        print('This folders is Exists Error:FileExistsError')
+dateformate(curent_date,last_date)
+print(os.path.abspath('date'))
