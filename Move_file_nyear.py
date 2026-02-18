@@ -9,6 +9,5 @@ def dateformate(dt):
             folder = dt + timedelta(days=i)# 2027-01-02
             os.mkdir(fr"C:\Users\yash.limbasiya\Desktop\2027_Date_folders/{folder.strftime('%Y-%m-%d')}")
 
-
 curent_date = input("enter the date 'yyyy-mm-dd': ")
 dateformate(curent_date)
